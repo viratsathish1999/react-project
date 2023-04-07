@@ -8,13 +8,18 @@
     display:flex;
     justify-content:space-between;
 }
+
 nav{
     display:flex;
     align-items:center;
     justify-content: space-between;
     background:#ffffff;
-    padding:15px 40px;
+    padding:10px 40px;
     font-weight:500;
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    z-index: 999;
 }
 .img{
     width: 10%;
@@ -33,16 +38,14 @@ nav{
     display:flex;
     align-items:center;
     justify-content:center;
+  
     li{
         list-style-type:none;
         padding:0 20px;
-        transition:0.3s ease-in-out;
-    }
-    li:hover::after{
-        content:" ";
-        border-bottom:3px solid green;
+       cursor: pointer;
         
     }
+    
 }
 #mobile{
     display:none;
@@ -56,7 +59,7 @@ nav{
 
 section{
     width:75%;
-    margin:0 auto;}
+    margin:5rem auto;}
 .car-container{
     display:flex;
     height: 18 rem !important;
@@ -142,6 +145,7 @@ section{
         border:none;
         padding:10px 20px;
         font-size:1rem;
+        margin: 1rem 0;
     }
 }
 .popup{

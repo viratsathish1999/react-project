@@ -22,7 +22,6 @@ const allData=createSlice({
         },
         setSecondCarAuthendication:(state,action)=>{
             state.secondCarAuthendication=action.payload
-           
         }
     }
 })

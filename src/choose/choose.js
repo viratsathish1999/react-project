@@ -1,5 +1,5 @@
  import React, { useEffect, useState } from 'react';
-import {Button, Card,CardContent, CardMedia,Typography } from '@mui/material';
+import {Button, Card,CardContent, CardMedia, Typography } from '@mui/material';
 import "./choose.scss"
 import CustomizedDialogs1 from "../dialog/dialog";
 import CustomizedDialog2 from '../dialog/car2dialog';

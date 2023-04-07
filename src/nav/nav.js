@@ -3,10 +3,21 @@ import {IconButton } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import GTranslateIcon from '@mui/icons-material/GTranslate';
+import SearchIcon from '@mui/icons-material/Search';
+import { useNavigate } from 'react-router-dom';
+import Choose from '../choose/choose';
+
 
 
 
 function Nav(){
+    const navigate=useNavigate();
+    function compare(){
+     navigate("/choose")
+    }
+    function home(){
+        navigate("/")
+    }
     return(
         <>
             <nav>
@@ -15,28 +26,30 @@ function Nav(){
                 </div>
                 <div>
                     <ul id="navbar">
-                        <li>NEW CARS</li>
-                        <li>USED CARS</li>
+                        <li onClick={()=>home()}>HOME</li>
+                        <li onClick={()=>compare()}>COMPARE CARS</li>
                         <li>REVIEWS&NEWS</li>
                     </ul>
                 </div>
                 <div className="input">
                     <input type="text" placeholder="search"></input>
+                  
                 </div>
                 <div className='muiicon'>
-                <IconButton color="primary" >
+                <IconButton  >
                     <LocationOnIcon/>
                 </IconButton>
-                <IconButton color="primary" >
-                    <AccountCircleIcon/>
-                </IconButton>
-                <IconButton color="primary" >
+                <IconButton >
                     <GTranslateIcon/>
                 </IconButton>
+                <IconButton >
+                    <AccountCircleIcon/>
+                </IconButton>
+                
                 </div>
-                <div id="mobile">
+                {/* <div id="mobile">
                     <i class="fa fa-bars"></i>
-                </div>
+                </div> */}
             </nav>
         </>
     )
