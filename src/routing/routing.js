@@ -5,30 +5,40 @@ import CustomizedDialogs from "../dialog/dialog";
 import Footer from "../footer/footer";
 import Nav from "../nav/nav";
 import CustomizedAccordions from "../dialog/accordin";
-import { Provider } from "react-redux";
+import { Provider, useSelector } from "react-redux";
 import { stores } from "../store/store";
 import Home from "../home/home";
-import List from "../table/table";
-import Slide from "../slide/slide";
 import Detail from "../detail/detail";
+import LogDeatils from "../logo/logodetails";
+import SignUp from "../login/login";
+import SignIn from "../login/sigin";
  
 const Routing=()=>{
+  const LoginAuthentication=useSelector((auth)=>auth.allDetail.loginAuthentication);
+  console.log('LoginAuthentication',LoginAuthentication);
     return(
         <div>
+          { LoginAuthentication ? 
+          <BrowserRouter>
+              <Routes>
+                <Route  path={"/"} element={<SignIn />}></Route>
+                <Route  path={"/signup"} element={<SignUp />}></Route>
+                <Route path="*" element={<SignIn/>}/>
+              </Routes>
+          </BrowserRouter>
+              :    
             <BrowserRouter>
             <Nav></Nav>
               <Routes>
-                
                 <Route path={"/"} element={<Home />}></Route>
                 <Route  path={"/choose"} element={<Choose />}></Route>
-                <Route  path={"/slide"} element={<Slide />}></Route>
                 <Route  path={"/detail/:index"} element={<Detail />}></Route>
-                {/* <Route path={"footer"} element={<Footer />}></Route>
-                <Route path={"choose"} element={<Choose />}></Route>
-                <Route path={"/list"} element={<List />}></Route> */}
+                <Route  path={"/logo/:companyName"} element={<LogDeatils />}></Route>
+                <Route path="*" element={<Home/>}/>
               </Routes>
             <Footer></Footer>
             </BrowserRouter>
+          }
         </div>
     )
 

@@ -51,9 +51,16 @@ nav{
     display:none;
 }
 .input{
+    position: relative;
     input{
         padding:0.5rem;
         width:100%;
+        
+    }
+    svg{
+        position: absolute;
+        right: 6px;
+        top: 6px;
     }
 }
 
@@ -63,6 +70,7 @@ section{
 .car-container{
     display:flex;
     height: 18 rem !important;
+    margin-top: 2rem;
     .car-row{
         width: 50%;
         border: 1px solid grey;

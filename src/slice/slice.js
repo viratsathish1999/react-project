@@ -8,7 +8,8 @@ const allData=createSlice({
         car1:'Brezza',
         car2:'Brezza',
         firstCarAuthendication:false,
-        secondCarAuthendication:false
+        secondCarAuthendication:false,
+        loginAuthentication:true
     },
     reducers:{
         setCar1:(state,action)=>{
@@ -22,9 +23,12 @@ const allData=createSlice({
         },
         setSecondCarAuthendication:(state,action)=>{
             state.secondCarAuthendication=action.payload
+        },
+        setLoginAuthentication:(state,action)=>{
+            state.loginAuthentication=action.payload
         }
     }
 })
 
 export default allData.reducer;
-export const {setCar1,setCar2,setFirstCarAuthendication,setSecondCarAuthendication}=allData.actions 
+export const {setCar1,setCar2,setFirstCarAuthendication,setSecondCarAuthendication,setLoginAuthentication}=allData.actions 

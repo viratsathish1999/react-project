@@ -14,8 +14,12 @@ const Detail=()=>{
     console.log('detail',detail);
 
     useEffect (()=>{
+
         setDetail(state.allCarDetails[params.index])
     },[params])
+    useEffect(()=>{
+       window.scrollTo(0,0)
+    },[])
 
     return(
         <div className="details-container">

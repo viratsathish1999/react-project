@@ -28,8 +28,6 @@ export default function SelectVariants1() {
           id="demo-simple-select-standard"
           value={age}
           onChange={handleChange}
-          
-          
         >
           <MenuItem value="">
            
@@ -43,14 +41,13 @@ export default function SelectVariants1() {
         </FormControl><br></br>
         <FormControl  className='pop' variant="standard" sx={{ m: 1, minWidth: 120 }}>
 <InputLabel id="demo-simple-select-standard-label"><img width={'17%'} src={require("./icons/icon-2.jpg")}/>Tata</InputLabel>
-       
         <Select 
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
           value={age}
           onChange={handleChange}
           // label="Age"
-        >
+ >
           <MenuItem value="">
           
           </MenuItem>

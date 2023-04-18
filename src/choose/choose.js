@@ -8,18 +8,16 @@ import CloseIcon from '@mui/icons-material/Close';
 import { setSecondCarAuthendication,setFirstCarAuthendication } from '../slice/slice';
 import List from '../table/table';
 
-
+ 
 
 function Choose() {
 
   const allDetail=useSelector(({allDetail})=>allDetail);
   const dispatch=useDispatch()
-  console.log('allDetail',allDetail);
-   const [isOpen, setIsOpen] = useState(false);
-  const [state,myState] = useState(false);
+  
 
-  const [firstCarDetails,changeFirstCarDetails]=useState('uhbhyub')
-  const [secondCarDetails,changeSecondCarDetails]=useState('hbhjb')
+  const [firstCarDetails,changeFirstCarDetails]=useState('car1')
+  const [secondCarDetails,changeSecondCarDetails]=useState('car2')
 
   console.log('firstCarDetails',firstCarDetails,'secondCarDetails',secondCarDetails)
 
@@ -41,22 +39,12 @@ function Choose() {
 
   },[allDetail.car2])
 
+  const [compare,setCompare]=useState(false);
 
- 
-  
-
-  function toggleBox() {
-    setIsOpen(!isOpen);
-  }
-
-  function boxToggle(){
-    myState(!state);
-  }
-  const [compare,setCompare]=useState(false)
-const buttonCheck=()=>{
-   if(allDetail.firstCarAuthendication===true && allDetail.secondCarAuthendication===true){
-    setCompare(true)
-   }
+  const buttonCheck=()=>{
+    if(allDetail.firstCarAuthendication===true && allDetail.secondCarAuthendication===true){
+      setCompare(true)
+    }
 }
 
   return (
@@ -66,11 +54,9 @@ const buttonCheck=()=>{
         and Honda New City is available in 1498 cc engine with 1 fuel type options</p>
     <div className='car-container'>
       <div className="car-row" >
-      
 
-   {allDetail.firstCarAuthendication ? 
+       {allDetail.firstCarAuthendication ? 
                 <Card sx={{ maxWidth: 345 }} className='card'>
-     
         <CardMedia
           component="img"
           height="140" 
@@ -108,43 +94,36 @@ const buttonCheck=()=>{
       <div className="car-row">
     
   {allDetail.secondCarAuthendication ? 
-                <Card sx={{ maxWidth: 345 }}  className='card'>
-     
-        <CardMedia
-          component="img"
-          height="140"
-          image={secondCarDetails.image}
-          alt="green iguana" 
-          className='image'/>
-        <CardContent className='cardall'>
-          <Typography gutterBottom variant="h6" className='card1' component="div">
-            {secondCarDetails.company}
-          </Typography>
-          <Typography variant="h6" className='card2' >
-           {secondCarDetails.model}
-          </Typography>
-          <Typography variant="body2"className='card3' >
-          {secondCarDetails.prize}
-          </Typography>
-          <Typography variant="body2" className='card4'>
-            Avg Ex ShowRoom Price
-          </Typography>
-          <Button variant="outlined" size="medium"  className='card5'>
-          Get Offers
-        </Button>
-        </CardContent>
-      
-
-      <CloseIcon className="closeicon" onClick={()=> {dispatch(setSecondCarAuthendication(false));setCompare(false)}}/>
+     <Card sx={{ maxWidth: 345 }}  className='card'>
+          <CardMedia
+            component="img"
+            height="140"
+            image={secondCarDetails.image}
+            alt="green iguana" 
+            className='image'/>
+          <CardContent className='cardall'>
+                <Typography gutterBottom variant="h6" className='card1' component="div">
+                  {secondCarDetails.company}
+                </Typography>
+                <Typography variant="h6" className='card2' >
+                {secondCarDetails.model}
+                </Typography>
+                <Typography variant="body2"className='card3' >
+                {secondCarDetails.prize}
+                </Typography>
+                <Typography variant="body2" className='card4'>
+                  Avg Ex ShowRoom Price
+                </Typography>
+                <Button variant="outlined" size="medium"  className='card5'>
+                Get Offers
+              </Button>
+          </CardContent>
+        <CloseIcon className="closeicon" onClick={()=> {dispatch(setSecondCarAuthendication(false));setCompare(false)}}/>
     </Card>
-    
     :
     <div className="car-box">      
-            <CustomizedDialog2/>
-                  
-                </div>
-    
-    
+            <CustomizedDialog2/>  
+    </div>   
     }
     
       </div>

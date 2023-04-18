@@ -33,7 +33,7 @@ function Nav(){
                 </div>
                 <div className="input">
                     <input type="text" placeholder="search"></input>
-                  
+                    <SearchIcon/>
                 </div>
                 <div className='muiicon'>
                 <IconButton  >
