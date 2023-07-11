@@ -13,7 +13,7 @@ const Detail=()=>{
     const [detail,setDetail]=useState(state.allCarDetails[params.index]);
     console.log('detail',detail);
 
-    useEffect (()=>{
+    useEffect (()=>{     
 
         setDetail(state.allCarDetails[params.index])
     },[params])

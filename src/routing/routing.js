@@ -18,7 +18,7 @@ const Routing=()=>{
   console.log('LoginAuthentication',LoginAuthentication);
     return(
         <div>
-          { LoginAuthentication ? 
+          {/* { LoginAuthentication ? 
           <BrowserRouter>
               <Routes>
                 <Route  path={"/"} element={<SignIn />}></Route>
@@ -26,7 +26,7 @@ const Routing=()=>{
                 <Route path="*" element={<SignIn/>}/>
               </Routes>
           </BrowserRouter>
-              :    
+              :     */}
             <BrowserRouter>
             <Nav></Nav>
               <Routes>
@@ -38,7 +38,7 @@ const Routing=()=>{
               </Routes>
             <Footer></Footer>
             </BrowserRouter>
-          }
+          {/* } */}
         </div>
     )
 
